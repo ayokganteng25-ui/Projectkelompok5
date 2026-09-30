@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Links | Linktree Style</title>
+
+    <!-- Font Google & FontAwesome untuk Ikon -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- CSS Lokal -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Background Animated Orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <main class="container">
+      <!-- Header / Profil -->
+      <header class="profile">
+        <div class="avatar-container">
+        </div>
+        <h1 class="name">Congratulatory messages</h1>
+        <p class="bio">Ready to help in congratulating someone</p>
+      </header>
+
+      <!-- Daftar Link Utama -->
+      <section class="links-container">
+        <a
+          href="https://wa.me/6281233418594"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-card highlight"
+        >
+          
+          <span>Kata Kata selamat ulang tahun</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-card"
+        >
+          
+          <span>Kata kata selamat wisuda</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-card"
+        >
+          
+          <span>Undangan acara</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-card"
+        >
+          
+          <span>Kata kata semangat</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <!-- Tombol Salin Link (Fitur Khusus JS) -->
+        <button class="link-card share-btn" onclick="copyPageLink()">
+          
+          <span>Kata kata buat seseorang</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </button>
+      </section>
+
+      <!-- Sosial Media Icons (Bawah) -->
+      <footer class="social-footer">
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok"
+          ><i class="fab fa-tiktok"></i
+        ></a>
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="mailto:email@domain.com" aria-label="Email"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </footer>
+
+      <p class="copyright">&copy; 2026 Crafted by kelompok 5</p>
+    </main>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">Link berhasil disalin! 📋</div>
+
+    <!-- JavaScript Lokal -->
+    <script src="script.js"></script>
+  </body>
+</html>
