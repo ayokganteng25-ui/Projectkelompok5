@@ -1,0 +1,1273 @@
+
+/* Halaman utama dan wadah bersama untuk kelima proyek. */
+body[data-project="home"] { margin: 0; min-height: 100vh; background: #0f172a; color: #f8fafc; font-family: "Segoe UI", sans-serif; }
+body[data-project="home"] * { box-sizing: border-box; }
+body[data-project="home"] [hidden] { display: none !important; }
+.home { max-width: 440px; margin: auto; padding: 64px 20px 32px; text-align: center; }
+.home h1 { font-size: 28px; margin: 0 0 12px; }
+.home p { color: #cbd5e1; line-height: 1.6; }
+.home nav { display: grid; gap: 14px; margin: 32px 0; }
+.home .link-card { padding: 18px 20px; border: 1px solid #475569; border-radius: 14px; background: #1e293b; color: #f8fafc; text-align: left; text-decoration: none; }
+.home .link-card strong, .home .link-card span { display: block; }
+.home .link-card span { margin-top: 5px; color: #cbd5e1; font-size: 14px; }
+.home .link-card:hover { border-color: #ff7aa2; }
+.home .link-card:focus-visible, .viewer a:focus-visible { outline: 3px solid #ff7aa2; outline-offset: 4px; }
+.home footer { color: #cbd5e1; font-size: 13px; }
+.viewer { height: 100vh; height: 100dvh; display: flex; flex-direction: column; }
+.viewer header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; background: #0f172a; color: white; }
+.viewer header a { color: white; padding: 10px 4px; text-decoration: none; }
+.viewer iframe { flex: 1; width: 100%; min-height: 0; border: 0; background: white; }
+@media(max-width: 480px) { .home { padding-top: 40px; } }
+body[data-project="abdul"] .birthday-dialog { width: min(280px, calc(100% - 32px)); padding: 20px; border: 1px solid #777; border-radius: 14px; background: #181818; color: white; text-align: center; font-family: var(--font-utama); }
+body[data-project="abdul"] .birthday-dialog::backdrop { background: #0009; }
+body[data-project="abdul"] .birthday-dialog img { width: 90px; height: 90px; object-fit: contain; }
+body[data-project="abdul"] .birthday-dialog h2 { font-size: 18px; }
+body[data-project="abdul"] .birthday-dialog button { padding: 10px 18px; margin: 5px; border: 0; border-radius: 4px; background: #4839eb; color: white; cursor: pointer; }
+body[data-project="abdul"] { margin: 0; }
+body[data-project="abid"], body[data-project="risky"] { padding: 24px 0; }
+body[data-project="abid"] .card, body[data-project="risky"] .container { margin: auto; }
+body[data-project="abid"] .love-message.show p { margin-bottom: 12px; }
+body[data-project="nouva"] * { box-sizing: border-box; }
+body[data-project="abdul"] #Tombol, body[data-project="abdul"] #pergeseran { visibility: hidden; }
+body[data-project="abdul"] #Tombol.tampil, body[data-project="abdul"] #pergeseran.tampil { visibility: visible; }
+
+/* Bagian Abdul: tampilan ucapan ulang tahun, slide, dan pesan akhir. */
+body[data-project="abdul"]{
+  --teks: #fff;
+  --font-utama: 'Nunito Sans', sans-serif;
+  --font-tulisan: 'Caveat', cursive;
+  --bayang-teks: 0 2px 2px rgba(0, 0, 0, .8);
+}
+body[data-project="abdul"]{
+  background: #000;
+  font-family: var(--font-utama);
+  padding: 20px 25px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+body[data-project="abdul"] a{ text-decoration: none; }
+body[data-project="abdul"] .sembunyi{ display: none !important; }
+@keyframes abdul-denyut{ 50% { transform: scale(1.3); } }
+body[data-project="abdul"] #bodyblur{
+  position: fixed;
+  inset: 0;
+  opacity: .5;
+  background: rgba(0, 0, 0, .3);
+  animation: abdul-denyut 7s infinite;
+}
+body[data-project="abdul"] #wallpaper{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body[data-project="abdul"] #Content{
+  position: relative;
+  width: 100%;
+  height: 180px;
+  margin-top: 50px;
+  opacity: 0;
+  transition: all .7s ease;
+}
+body[data-project="abdul"] #Content > *{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 1px;
+}
+body[data-project="abdul"] #ftAwal > img{
+  width: 130px;
+  height: 130px;
+  margin-bottom: 50px;
+}
+@keyframes abdul-berdenyut-kecil{
+  from { transform: scale(1); }
+  to   { transform: scale(.85); }
+}
+body[data-project="abdul"] #loveIn{ animation: abdul-berdenyut-kecil .7s ease-in-out infinite alternate; }
+body[data-project="abdul"] .lovein{
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+body[data-project="abdul"] .lovein svg{
+  width: 35px;
+  height: 35px;
+  fill: none;
+  stroke: #f00;
+  stroke-width: 1.3;
+}
+body[data-project="abdul"] #ket{
+  margin-top: 20px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--teks);
+  text-shadow: var(--bayang-teks);
+  opacity: .8;
+}
+body[data-project="abdul"] .kumpulanstiker > img{
+  display: none;
+  width: 92px;
+  height: 92px;
+  padding: 10px;
+  background: rgba(255, 255, 255, .5);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, .2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+body[data-project="abdul"] #fotostiker{
+  opacity: .1;
+  transform: scale(.1);
+  transition: all .7s ease;
+}
+body[data-project="abdul"] #pergeseran{
+  position: absolute;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 500px;
+  margin-top: 40px;
+  padding: 0 30px;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 1s ease;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+body[data-project="abdul"] #pergeseran.tampil{
+  position: relative;
+  opacity: 1;
+  transform: scale(1);
+}
+body[data-project="abdul"] #pergeseran > *:last-child{ margin-right: 0; }
+body[data-project="abdul"] #pergeseran::after{
+  content: '';
+  display: block;
+  flex-shrink: 0;
+  align-self: stretch;
+  padding-left: 20px;
+}
+body[data-project="abdul"] #pergeseran p{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  min-height: 150px;
+  margin: 0 15px 0 0;
+  padding: 15px;
+  line-height: 1.4em;
+  text-align: center;
+  color: var(--teks);
+  text-shadow: var(--bayang-teks);
+  background: rgba(0, 0, 0, .5);
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  scroll-snap-align: center;
+}
+body[data-project="abdul"] #pergeseran p b{ display: block; }
+body[data-project="abdul"] #pergeseran p b span{ font-size: 15px; font-weight: 700; }
+body[data-project="abdul"] #pergeseran p b span.ft{ font-family: var(--font-tulisan); font-size: 20px; }
+body[data-project="abdul"] #pergeseran p b img{ width: 80px; height: 80px; margin-bottom: 20px; }
+body[data-project="abdul"] #Tombol{
+  position: relative;
+  margin-top: 20px;
+  opacity: 0;
+  transform: scale(.1);
+  transition: all .7s ease;
+}
+body[data-project="abdul"] #Tombol.tampil{
+  opacity: 1;
+  transform: scale(1);
+}
+body[data-project="abdul"] #Tombol button{
+  display: inline-flex;
+  align-items: center;
+  margin: 12px 0;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 15px;
+  white-space: nowrap;
+  color: var(--teks);
+  background: rgba(0, 0, 0, .5);
+  border-left: 2px solid #fff;
+  border-right: 2px solid #fff;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+body[data-project="abdul"] #Tombol button:hover{ transform: scale(.9); opacity: .98; }
+@keyframes abdul-membesar{ to { transform: scale(1.1); } }
+body[data-project="abdul"] blockquote{
+  position: absolute;
+  width: 400px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  line-height: 1.3em;
+  color: var(--teks);
+  text-shadow: var(--bayang-teks);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(.1);
+  transition: all .7s ease;
+}
+body[data-project="abdul"] blockquote.tampil{
+  position: relative;
+  margin-top: 5vh;
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+body[data-project="abdul"] blockquote p{
+  margin: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+body[data-project="abdul"] blockquote p span.ft, body[data-project="abdul"] #teksnim{
+  font-family: var(--font-tulisan);
+  font-size: 20px;
+  font-weight: 700;
+}
+body[data-project="abdul"] #teksnim{
+  position: absolute;
+  font-size: 22px;
+  opacity: 0;
+  transform: scale(0);
+  transition: all .8s ease;
+}
+body[data-project="abdul"] #teksnim.tampil{
+  position: relative;
+  opacity: 1;
+  transform: scale(1);
+}
+body[data-project="abdul"] #teksnim.berdenyut{ animation: abdul-membesar .8s infinite alternate; }
+body[data-project="abdul"] .tanggal{
+  position: fixed;
+  bottom: 25px;
+  left: 25px;
+  z-index: 2;
+  font-size: 10px;
+  color: #fff;
+  opacity: .5;
+}
+@keyframes abdul-jatuh{
+  from { transform: translateY(-10vh); }
+  to   { transform: translateY(100vh); }
+}
+body[data-project="abdul"] .fa-heart{
+  position: absolute;
+  top: -10vh;
+  z-index: 0;
+  font-size: 20px;
+  color: #fff;
+  opacity: .3;
+  animation: abdul-jatuh linear 1;
+}
+body[data-project="abdul"] .swal2-modal{
+  max-width: 280px;
+  top: -60px;
+  background: rgba(0, 0, 0, .6);
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 14px;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, .3);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+body[data-project="abdul"] .swal2-modal > *{
+  font-family: var(--font-utama);
+  font-size: 16px;
+  color: #fff;
+}
+body[data-project="abdul"] .swal2-title{
+  padding: 15px 30px 0;
+  font-size: 17px;
+  line-height: 1.3em;
+  text-align: center;
+}
+body[data-project="abdul"] .swal2-image{
+  padding: 10px;
+  background: rgba(255, 255, 255, .5);
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 50%;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, .3);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+body[data-project="abdul"] .swal2-styled.swal2-confirm, body[data-project="abdul"] .swal2-styled.swal2-cancel{
+  position: relative;
+  z-index: 1;
+  font-size: 14px;
+  color: #fff;
+  background-color: #4839eb;
+  border: 1px solid #ffffff59;
+  border-radius: 4px;
+  transition: all .2s;
+}
+body[data-project="abdul"] .lovein{ border: 0; box-sizing: content-box; }
+body[data-project="abdul"] #pergeseran{ box-sizing: border-box; width: 100%; padding: 0; }
+body[data-project="abdul"] #pergeseran p{ box-sizing: border-box; width: 100%; margin-right: 0; }
+body[data-project="abdul"] blockquote{ width: min(400px, 100%); overflow-wrap: anywhere; }
+body[data-project="abdul"] #Tombol button{ font-family: inherit; }
+body[data-project="abdul"]{ overflow-x: hidden; overflow-y: auto; }
+body[data-project="abdul"] :focus-visible{ outline: 3px solid currentColor; outline-offset: 4px; }
+body[data-project="abdul"] button, body[data-project="abdul"] [role="button"]{ min-height: 44px; }
+@media(prefers-reduced-motion: reduce){body[data-project="abdul"] *, body[data-project="abdul"] *::before, body[data-project="abdul"] *::after{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+ }
+
+/* Bagian Abid: kartu pesan dan animasi hati. */
+body[data-project="abid"] *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body[data-project="abid"]{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Segoe UI", sans-serif;
+    background:
+        radial-gradient(circle at top left, #ffd6e0, transparent 35%),
+        radial-gradient(circle at bottom right, #ffc2d1, transparent 35%),
+        linear-gradient(135deg, #fff0f3, #ffe1e9);
+
+    overflow: hidden;
+    color: #4a2630;
+}
+body[data-project="abid"] .card{
+    position: relative;
+    width: min(90%, 450px);
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 60px rgba(170, 50, 80, 0.18);
+
+    animation: abid-cardMasuk 1s ease;
+}
+body[data-project="abid"] .top-heart{
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: #ff4d6d;
+    color: white;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 8px 25px rgba(255, 77, 109, 0.35);
+
+    animation: abid-heartbeat 1.5s infinite;
+}
+body[data-project="abid"] .small-text{
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    color: #c45b76;
+
+    margin-bottom: 10px;
+}
+body[data-project="abid"] h1{
+    font-size: 2.4rem;
+    color: #b4234d;
+
+    margin-bottom: 15px;
+}
+body[data-project="abid"] .description{
+    font-size: 1rem;
+    line-height: 1.7;
+
+    color: #76535c;
+}
+body[data-project="abid"] .divider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin: 25px 0;
+
+    color: #ff4d6d;
+}
+body[data-project="abid"] .divider span{
+    width: 60px;
+    height: 1px;
+
+    background: #f3a1b2;
+}
+body[data-project="abid"] .question{
+    font-size: 1rem;
+    margin-bottom: 18px;
+
+    color: #63343f;
+}
+body[data-project="abid"] .button-love{
+    border: none;
+    outline: none;
+
+    padding: 13px 25px;
+
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #ff4d6d,
+        #d6336c
+    );
+
+    color: white;
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(214, 51, 108, 0.3);
+
+    transition: 0.3s ease;
+}
+body[data-project="abid"] .button-love:hover{
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 28px rgba(214, 51, 108, 0.4);
+}
+body[data-project="abid"] .button-love:active{
+    transform: scale(0.96);
+}
+body[data-project="abid"] .love-message{
+    max-height: 0;
+    opacity: 0;
+
+    overflow: hidden;
+
+    margin-top: 0;
+
+    transition:
+        max-height 0.8s ease,
+        opacity 0.8s ease,
+        margin-top 0.8s ease;
+}
+body[data-project="abid"] .love-message.show{
+    max-height: 350px;
+    opacity: 1;
+
+    margin-top: 25px;
+}
+body[data-project="abid"] .love-message p{
+    line-height: 1.7;
+    font-size: 0.95rem;
+
+    opacity: 0;
+    transform: translateY(12px);
+}
+body[data-project="abid"] .love-message.show p:nth-child(1){
+    animation: abid-munculPesan 0.5s ease forwards;
+    animation-delay: 0.2s;
+}
+body[data-project="abid"] .love-message.show p:nth-child(2){
+    animation: abid-munculPesan 0.5s ease forwards;
+    animation-delay: 0.6s;
+}
+body[data-project="abid"] .love-message.show p:nth-child(3){
+    animation: abid-munculPesan 0.5s ease forwards;
+    animation-delay: 1s;
+}
+body[data-project="abid"] .ending{
+    margin-top: 12px;
+
+    color: #d6336c;
+    font-weight: 600;
+}
+body[data-project="abid"] .signature{
+    margin-top: 30px;
+
+    font-size: 0.75rem;
+    font-style: italic;
+
+    color: #9b6875;
+}
+body[data-project="abid"] .floating-hearts span{
+    position: absolute;
+
+    bottom: -50px;
+
+    color: rgba(255, 77, 109, 0.25);
+
+    font-size: 25px;
+
+    animation: abid-floatUp 8s linear infinite;
+}
+body[data-project="abid"] .floating-hearts span:nth-child(1){
+    left: 10%;
+    animation-delay: 0s;
+}
+body[data-project="abid"] .floating-hearts span:nth-child(2){
+    left: 30%;
+    animation-delay: 2s;
+}
+body[data-project="abid"] .floating-hearts span:nth-child(3){
+    left: 50%;
+    animation-delay: 4s;
+}
+body[data-project="abid"] .floating-hearts span:nth-child(4){
+    left: 70%;
+    animation-delay: 1s;
+}
+body[data-project="abid"] .floating-hearts span:nth-child(5){
+    left: 90%;
+    animation-delay: 3s;
+}
+@keyframes abid-cardMasuk{
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+@keyframes abid-heartbeat{
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+@keyframes abid-floatUp{
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+@keyframes abid-munculPesan{
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@media (max-width: 500px){body[data-project="abid"] .card{
+        padding: 35px 25px;
+    }
+body[data-project="abid"] h1{
+        font-size: 2rem;
+    }
+body[data-project="abid"] .description{
+        font-size: 0.95rem;
+    }
+body[data-project="abid"] .divider span{
+        width: 40px;
+    }
+
+}
+body[data-project="abid"] .love-message.show{ max-height: 1200px; }
+body[data-project="abid"] .small-text, body[data-project="abid"] .signature{ color: #874355; }
+body[data-project="abid"]{ overflow-x: hidden; overflow-y: auto; }
+body[data-project="abid"] :focus-visible{ outline: 3px solid currentColor; outline-offset: 4px; }
+body[data-project="abid"] button, body[data-project="abid"] [role="button"]{ min-height: 44px; }
+@media(prefers-reduced-motion: reduce){body[data-project="abid"] *, body[data-project="abid"] *::before, body[data-project="abid"] *::after{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+ }
+
+/* Bagian Nouva: tema wisuda, foto, kotak ucapan, dan kado. */
+body[data-project="nouva"]{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+body[data-project="nouva"] .profile-img{
+    width: 120px;          
+    height: 120px;         
+    border-radius: 50%;    
+    border: 3px solid #d4af37; 
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4); 
+    object-fit: cover;     
+    margin-bottom: 10px;
+}
+body[data-project="nouva"] .container{
+    width: 100%;
+    max-width: 450px;
+    padding: 30px 20px ;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body[data-project="nouva"] h1{
+    font-size: 14px;
+    margin-top: 15px;
+    color: #d4af37;
+    letter-spacing: 1px;
+}
+body[data-project="nouva"] .subtitle{
+    font-size: 14px;
+    color: #b0bec5;
+    margin-bottom: 25px;
+}
+body[data-project="nouva"] .main-btn{
+    background: linear-gradient(45deg, #d4af37, #f3e5ab);
+    color: #1a1a1a;
+    border: none;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    display: inline-block;
+    width: auto;
+}
+body[data-project="nouva"] .main-btn:hover{
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+}
+body[data-project="nouva"] #gift-btn{
+    margin-bottom: 15px; 
+}
+body[data-project="nouva"] #gift-box{
+    margin-bottom: 25px; 
+}
+body[data-project="nouva"] .link-btn{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+body[data-project="nouva"] .quotes-box{
+    background-color: rgba(225, 225, 225, 0.12); 
+    backdrop-filter: blur(8px); 
+    border: 2px solid #ffd700; 
+    padding: 20px;
+    border-radius: 16px;
+    margin: 25px auto;
+    max-width: 85%;
+    box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.4); 
+    text-align: center;
+    animation: munculPerlahan 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) both; 
+}
+body[data-project="nouva"] #quotes-box p{
+    color: #ffffff !important;
+    font-size: 15px;
+    line-height: 1.6;
+    font-style: italic;
+    font-weight: 500;
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+body[data-project="nouva"] .quotes-box-hidden{
+    display: none !important;
+    opacity: 0;
+}
+body[data-project="nouva"] .links{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+body[data-project="nouva"] .link-btn{
+    display: block;
+    background-color: rgba(225, 225, 225, 0.9);
+    color: #1a1a1a;
+    padding: 14px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+body[data-project="nouva"] .link-btn:hover{
+    background-color: #d4af37;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-sizing: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+body[data-project="nouva"] .footer{
+    margin-top: 40px;
+    font-size: 11px;
+    color: #78909c;
+}
+body[data-project="nouva"] .gift-img{
+    width: 100%;             
+    max-width: 280px;        
+    height: 180px;           
+    object-fit: cover;       
+    border-radius: 12px;     
+    border: 2px solid rgba(76, 175, 80, 0.3); 
+    margin-top: 15px;        
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); 
+    transition: all 0.3s ease-in-out; 
+    display: inline-block;
+}
+body[data-project="nouva"] #gift-box{
+    border-left: 5px solid #4caf50; 
+    margin-top: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(76, 175, 80, 0.3);
+    border-right: 1px solid rgba(76, 175, 80, 0.3);
+    border-bottom: 1px solid rgba(76, 175, 80, 0.3);
+}
+body[data-project="nouva"] .hidden{
+    display: none !important;
+}
+body[data-project="nouva"] #quotes-box{
+            background: rgba(0, 0, 0, 0.3) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px);
+            border: 3px solid #ffcc00 !important;
+            padding: 20px !important;
+            border-radius: 15px !important;
+            margin: 25px auto !important;
+            max-width: 85% !important;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+            text-align: center !important;
+        }
+body[data-project="nouva"] #quotes-box p{
+            color: #ffffff !important;
+            font-size: 15px !important;
+            line-height: 1.6 !important;
+            font-style: italic !important;
+            margin: 0 !important;
+        }
+body[data-project="nouva"] .quotes-box-hidden{
+            display: none !important;
+        }
+body[data-project="nouva"] #canvas-confetti{ position: fixed; inset: 0; pointer-events: none; }
+body[data-project="nouva"]{ overflow-x: hidden; overflow-y: auto; }
+body[data-project="nouva"] :focus-visible{ outline: 3px solid currentColor; outline-offset: 4px; }
+body[data-project="nouva"] button, body[data-project="nouva"] [role="button"]{ min-height: 44px; }
+@media(prefers-reduced-motion: reduce){body[data-project="nouva"] *, body[data-project="nouva"] *::before, body[data-project="nouva"] *::after{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+ }
+
+/* Bagian Risky: kotak kado, input nama, dan pesan penyemangat. */
+body[data-project="risky"] *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body[data-project="risky"]{
+
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #e4d2ff
+        );
+
+    overflow: hidden;
+}
+body[data-project="risky"] .container{
+
+    width: 90%;
+
+    max-width: 550px;
+
+    background:
+        rgba(255,255,255,0.95);
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0,0,0,0.15);
+}
+body[data-project="risky"] h1{
+
+    color: #d63384;
+
+    margin-bottom: 10px;
+}
+body[data-project="risky"] .subtitle{
+
+    color: #777;
+
+    margin-bottom: 25px;
+
+    line-height: 1.5;
+}
+body[data-project="risky"] input{
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 2px solid #eee;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+
+    outline: none;
+}
+body[data-project="risky"] input:focus{
+
+    border-color: #d63384;
+}
+body[data-project="risky"] .click-text{
+
+    color: #777;
+
+    font-size: 15px;
+
+    margin-bottom: 15px;
+}
+body[data-project="risky"] .gift-container{
+
+    margin-top: 20px;
+}
+body[data-project="risky"] .gift{
+
+    position: relative;
+
+    width: 150px;
+
+    height: 120px;
+
+    margin: 40px auto;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+body[data-project="risky"] .gift:hover{
+
+    transform: scale(1.08);
+}
+body[data-project="risky"] .gift-body{
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 150px;
+
+    height: 95px;
+
+    background: #ff4f81;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 8px 15px
+        rgba(0,0,0,0.2);
+}
+body[data-project="risky"] .ribbon-vertical{
+
+    position: absolute;
+
+    left: 62px;
+
+    bottom: 0;
+
+    width: 26px;
+
+    height: 95px;
+
+    background: #ffd166;
+
+    z-index: 2;
+}
+body[data-project="risky"] .gift-lid{
+
+    position: absolute;
+
+    top: 10px;
+
+    left: -7px;
+
+    width: 164px;
+
+    height: 35px;
+
+    background: #ff3366;
+
+    border-radius: 7px;
+
+    z-index: 4;
+
+    transition: 0.8s ease;
+}
+body[data-project="risky"] .ribbon-left, body[data-project="risky"] .ribbon-right{
+
+    position: absolute;
+
+    width: 45px;
+
+    height: 25px;
+
+    background: #ffd166;
+
+    top: -12px;
+
+    border-radius: 50%;
+}
+body[data-project="risky"] .ribbon-left{
+
+    left: 42px;
+
+    transform: rotate(35deg);
+}
+body[data-project="risky"] .ribbon-right{
+
+    right: 42px;
+
+    transform: rotate(-35deg);
+}
+body[data-project="risky"] .gift.open .gift-lid{
+
+    transform:
+        translateY(-70px)
+        rotate(-15deg);
+}
+body[data-project="risky"] .message{
+
+    display: none;
+
+    margin-top: 30px;
+
+    padding: 30px;
+
+    background: #fff0f6;
+
+    border-radius: 20px;
+
+    animation:
+        risky-muncul 1s ease forwards;
+}
+body[data-project="risky"] .message h2{
+
+    color: #d63384;
+
+    margin-bottom: 20px;
+}
+body[data-project="risky"] .message p{
+
+    color: #555;
+
+    line-height: 1.8;
+
+    font-size: 16px;
+}
+@keyframes risky-muncul{
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            scale(0.8);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+body[data-project="risky"] .confetti{
+
+    position: fixed;
+
+    top: -20px;
+
+    font-size: 25px;
+
+    animation:
+        risky-jatuh linear forwards;
+
+    z-index: 9999;
+
+    pointer-events: none;
+}
+@keyframes risky-jatuh{
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+
+        transform:
+            translateY(110vh)
+            rotate(720deg);
+
+        opacity: 0;
+    }
+}
+body[data-project="risky"] .reset{
+
+    display: none;
+
+    margin-top: 20px;
+
+    padding: 12px 25px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #d63384;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+body[data-project="risky"] .reset:hover{
+
+    background: #b82d70;
+}
+@media (max-width: 600px){body[data-project="risky"] .container{
+
+        padding: 25px 18px;
+    }
+body[data-project="risky"] .gift{
+
+        transform: scale(0.9);
+    }
+body[data-project="risky"] .gift:hover{
+
+        transform: scale(0.95);
+    }
+
+
+}
+body[data-project="risky"] .subtitle, body[data-project="risky"] .click-text{ color: #595959; }
+body[data-project="risky"]{ overflow-x: hidden; overflow-y: auto; }
+body[data-project="risky"] :focus-visible{ outline: 3px solid currentColor; outline-offset: 4px; }
+body[data-project="risky"] button, body[data-project="risky"] [role="button"]{ min-height: 44px; }
+@media(prefers-reduced-motion: reduce){body[data-project="risky"] *, body[data-project="risky"] *::before, body[data-project="risky"] *::after{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+ }
+
+/* Bagian Selly: foto wisudawan, menu undangan, dan informasi acara. */
+body[data-project="selly"] *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body[data-project="selly"]{
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 40px 15px;
+
+    background: linear-gradient(
+        135deg,
+        #f8eee5,
+        #e7cfc0
+    );
+
+    color: #4a2929;
+}
+body[data-project="selly"] .container{
+    width: 100%;
+    max-width: 450px;
+
+    text-align: center;
+}
+body[data-project="selly"] .foto{
+    width: 140px;
+    height: 140px;
+
+    margin: auto;
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    background: #7b3434;
+}
+body[data-project="selly"] .foto img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+body[data-project="selly"] h1{
+    margin-top: 18px;
+
+    font-size: 28px;
+
+    color: #642c2c;
+}
+body[data-project="selly"] .judul{
+    margin-top: 8px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: #8b5e3c;
+}
+body[data-project="selly"] .deskripsi{
+    margin-top: 25px;
+
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-radius: 20px;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+}
+body[data-project="selly"] .deskripsi p + p{
+    margin-top: 10px;
+}
+body[data-project="selly"] .menu{
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+body[data-project="selly"] button{
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: #7b3434;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+body[data-project="selly"] button:hover{
+    background: #a05252;
+
+    transform: translateY(-3px);
+}
+body[data-project="selly"] .info{
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    line-height: 1.7;
+}
+body[data-project="selly"] .info h2{
+    margin-bottom: 10px;
+
+    color: #7b3434;
+}
+body[data-project="selly"] .footer{
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    color: #765050;
+}
+body[data-project="selly"]{ overflow-x: hidden; overflow-y: auto; }
+body[data-project="selly"] :focus-visible{ outline: 3px solid currentColor; outline-offset: 4px; }
+body[data-project="selly"] button, body[data-project="selly"] [role="button"]{ min-height: 44px; }
+@media(prefers-reduced-motion: reduce){body[data-project="selly"] *, body[data-project="selly"] *::before, body[data-project="selly"] *::after{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+ }
