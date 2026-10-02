@@ -18,6 +18,80 @@ body[data-project="home"] [hidden] { display: none !important; }
 .viewer header a { color: white; padding: 10px 4px; text-decoration: none; }
 .viewer iframe { flex: 1; width: 100%; min-height: 0; border: 0; background: white; }
 @media(max-width: 480px) { .home { padding-top: 40px; } }
+
+/* Tema landing page: dark glassmorphism dengan aksen ungu dan pink. */
+body[data-project="home"] {
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(99, 102, 241, .22), transparent 34%),
+    radial-gradient(circle at 82% 86%, rgba(236, 72, 153, .18), transparent 36%),
+    #0f172a;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+}
+body[data-project="home"]::before,
+body[data-project="home"]::after {
+  content: "";
+  position: fixed;
+  z-index: -1;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(74px);
+  opacity: .48;
+  pointer-events: none;
+}
+body[data-project="home"]::before { top: 8%; left: 8%; background: #6366f1; }
+body[data-project="home"]::after { right: 8%; bottom: 6%; background: #ec4899; }
+.home { position: relative; max-width: 520px; padding: 28px 18px 32px; }
+.home-panel {
+  position: relative;
+  z-index: 1;
+  padding: 32px 24px 24px;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 28px;
+  background: rgba(15, 23, 42, .68);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .34);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.home-profile { margin-bottom: 28px; }
+.home-avatar {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  margin: 0 auto 18px;
+  border: 3px solid rgba(255, 255, 255, .18);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  color: #fff;
+  font-size: 30px;
+  box-shadow: 0 12px 28px rgba(99, 102, 241, .34);
+}
+.home-kicker { margin: 0 0 8px !important; color: #c4b5fd !important; font-size: 11px; font-weight: 700; letter-spacing: 1.8px; }
+.home h1 { margin-bottom: 8px; font-size: clamp(26px, 7vw, 34px); letter-spacing: -.5px; }
+.home-profile > p:not(.home-kicker) { margin: 0; color: #a5b4fc; font-size: 14px; }
+.home nav { gap: 13px; margin: 0 0 26px; }
+.home .link-card {
+  position: relative;
+  overflow: hidden;
+  padding: 16px 18px;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, .9), rgba(168, 85, 247, .78));
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .16);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+.home .link-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(120deg, transparent, rgba(255, 255, 255, .12), transparent); transform: translateX(-100%); transition: transform .5s ease; }
+.home .link-card:hover { border-color: rgba(255, 255, 255, .35); box-shadow: 0 14px 28px rgba(0, 0, 0, .24); transform: translateY(-3px); }
+.home .link-card:hover::before { transform: translateX(100%); }
+.home .link-card strong, .home .link-card span { position: relative; }
+.home .link-card strong { font-size: 15px; }
+.home .link-card span { color: rgba(255, 255, 255, .78); font-size: 13px; }
+.home footer { color: #94a3b8; font-size: 12px; }
+.home-orb { position: absolute; pointer-events: none; }
 body[data-project="abdul"] .birthday-dialog { width: min(280px, calc(100% - 32px)); padding: 20px; border: 1px solid #777; border-radius: 14px; background: #181818; color: white; text-align: center; font-family: var(--font-utama); }
 body[data-project="abdul"] .birthday-dialog::backdrop { background: #0009; }
 body[data-project="abdul"] .birthday-dialog img { width: 90px; height: 90px; object-fit: contain; }
