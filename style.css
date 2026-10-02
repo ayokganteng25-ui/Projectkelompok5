@@ -1345,3 +1345,87 @@ body[data-project="selly"] :focus-visible{ outline: 3px solid currentColor; outl
 body[data-project="selly"] button, body[data-project="selly"] [role="button"]{ min-height: 44px; }
 @media(prefers-reduced-motion: reduce){body[data-project="selly"] *, body[data-project="selly"] *::before, body[data-project="selly"] *::after{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
  }
+
+/* Penyempurnaan Abdul: foto pembuka yang selalu terlihat dan pesan lebih personal. */
+body[data-project="abdul"] #ftAwal {
+  min-height: 130px;
+  min-width: 130px;
+  margin-bottom: 50px;
+  border: 3px solid rgba(255, 255, 255, .72);
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1, #ec4899);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .35);
+  overflow: hidden;
+}
+body[data-project="abdul"] #ftAwal > img {
+  width: 130px;
+  height: 130px;
+  margin: 0;
+  display: block;
+  object-fit: cover;
+}
+body[data-project="abdul"] #pergeseran p b span { max-width: 260px; line-height: 1.55; }
+body[data-project="abdul"] blockquote { max-width: 420px; width: 100%; padding: 0 18px; }
+
+/* Nouva: semua tombol memakai ukuran, radius, dan warna yang sama. */
+body[data-project="nouva"] .main-btn,
+body[data-project="nouva"] .link-btn,
+body[data-project="nouva"] #gift-btn {
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 14px;
+  background: linear-gradient(135deg, #d4af37, #f3e5ab);
+  color: #241b05;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, .18);
+  transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+body[data-project="nouva"] .main-btn:hover,
+body[data-project="nouva"] .link-btn:hover,
+body[data-project="nouva"] #gift-btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.06);
+  box-shadow: 0 12px 24px rgba(212, 175, 55, .3);
+}
+body[data-project="nouva"] .links { gap: 12px; }
+body[data-project="nouva"] #gift-box {
+  width: 100%;
+  margin: 12px 0 0 !important;
+  padding: 18px;
+  border: 2px solid rgba(212, 175, 55, .7) !important;
+  border-radius: 14px;
+}
+
+/* Selly: undangan wisuda berbahasa Indonesia dengan nuansa elegan. */
+body[data-project="selly"] {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  padding: 28px 16px;
+  background: radial-gradient(circle at 15% 10%, #f8d8c8 0, transparent 38%), linear-gradient(145deg, #fff8f2, #f4d5c8);
+  color: #4a2929;
+}
+body[data-project="selly"] .container {
+  max-width: 480px;
+  padding: 28px 22px 24px;
+  border: 1px solid rgba(123, 52, 52, .16);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .62);
+  box-shadow: 0 20px 50px rgba(100, 52, 38, .18);
+  backdrop-filter: blur(12px);
+}
+body[data-project="selly"] .foto { width: 148px; height: 148px; padding: 5px; background: linear-gradient(135deg, #7b3434, #d59b78); box-shadow: 0 12px 25px rgba(123, 52, 52, .22); }
+body[data-project="selly"] h1 { margin-top: 20px; color: #642c2c; font-size: 29px; }
+body[data-project="selly"] .judul { margin-top: 8px; color: #a05e49; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; }
+body[data-project="selly"] .deskripsi { margin-top: 24px; padding: 20px; border: 1px solid rgba(123, 52, 52, .12); background: rgba(255, 255, 255, .7); color: #684444; line-height: 1.75; }
+body[data-project="selly"] .menu { gap: 12px; margin-top: 22px; }
+body[data-project="selly"] button { border: 1px solid rgba(255, 255, 255, .5); border-radius: 14px; background: linear-gradient(135deg, #7b3434, #a05252); box-shadow: 0 8px 16px rgba(123, 52, 52, .18); font: inherit; font-weight: 600; }
+body[data-project="selly"] button:hover { background: linear-gradient(135deg, #642c2c, #8b4545); }
+body[data-project="selly"] .info { border: 1px solid rgba(123, 52, 52, .12); border-radius: 16px; background: rgba(255, 255, 255, .82); color: #684444; box-shadow: 0 8px 18px rgba(100, 52, 38, .1); }
+body[data-project="selly"] .info h2 { color: #7b3434; }
+body[data-project="selly"] .footer { color: #8b5e3c; line-height: 1.5; }

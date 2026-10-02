@@ -711,17 +711,7 @@ function lihatLokasi() {
 
 function konfirmasi() {
 
-    const pesan = `Halo! 
-
-I invite you to my graduation ceremony ^_^
-
- Sabtu, 10 Oktober 2026
- 08.00 WIB
- Gedung Sport Center
-
-Your presence will be a special part of this moment!
-
-See uuu guyss!`;
+    const pesan = `Halo! Saya ingin mengundang kamu ke acara wisudaku 😊\n\nSabtu, 10 Oktober 2026\nPukul 08.00 WIB\nGedung Sport Center, Malang\n\nKehadiranmu akan menjadi bagian istimewa dari hari ini. Sampai jumpa!`;
 
 
     const link =
