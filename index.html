@@ -1,388 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ucapan dari Teman | Project Pameran</title>
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer></script>
-</head>
-<body data-project="home">
-<!-- Halaman utama: lima pilihan ucapan teman. -->
-<main id="home" class="home">
-<h1>Ucapan dari Teman</h1>
-<p>Lima pesan, masing-masing punya cerita.<br>Pilih nama untuk membuka ucapannya.</p>
-<nav aria-label="Ucapan teman"><a class="link-card" href="#abdul"><strong>Abdul</strong><span>Ucapan ulang tahun</span></a>
-<a class="link-card" href="#abid"><strong>Abid</strong><span>Pesan untuk seseorang</span></a>
-<a class="link-card" href="#nouva"><strong>Nouva</strong><span>Ucapan selamat wisuda</span></a>
-<a class="link-card" href="#risky"><strong>Risky</strong><span>Kado penyemangat</span></a>
-<a class="link-card" href="#selly"><strong>Selly</strong><span>Undangan wisuda</span></a></nav>
-<footer>Project Pameran · Kelompok 5</footer>
-<noscript>Aktifkan JavaScript untuk membuka ucapan teman.</noscript>
-</main>
-<!-- Wadah bersama: menampilkan proyek terpilih dengan tombol kembali. -->
-<section id="viewer" class="viewer" hidden aria-label="Ucapan teman">
-<header><a href="#home">← Kembali</a><strong id="author"></strong></header>
-<iframe id="project-frame" title="Ucapan teman"></iframe>
-</section>
-<!-- Bagian Abdul: ucapan ulang tahun, slide pesan, dan pilihan kado. -->
-<template id="project-abdul"><audio id="linkmp3" class="sembunyi" src="https://feeldreams.github.io/audio/anditsnot.mp3"></audio>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Links | Linktree Style</title>
 
-  
-  <div id="bodyblur">
-    <img id="wallpaper" src="https://feeldreams.github.io/pics/awan3.jpg" alt="">
-  </div>
+    <!-- Font Google & FontAwesome untuk Ikon -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
-  <div id="Content">
+    <!-- CSS Lokal -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Background Animated Orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
 
-    
-    <div id="ftAwal">
-      <img src="https://feeldreams.github.io/pandaputih.gif" alt="">
-    </div>
-
-    
-    <div id="loveIn">
-      <button type="button" class="lovein" aria-label="Mulai ucapan ulang tahun">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <g transform="translate(2.55, 3.55)">
-            <path d="M0.37,8.9 C-0.7,5.55 0.55,1.38 4.07,0.25 C5.92,-0.35 8.2,0.15 9.5,1.94 C10.72,0.08 13.07,-0.34 14.92,0.25 C18.44,1.38 19.7,5.55 18.63,8.9 C16.96,14.2 11.13,16.97 9.5,16.97 C7.87,16.97 2.1,14.27 0.37,8.9 Z"/>
-            <path d="M13.24,4.01 C14.45,4.14 15.2,5.09 15.16,6.44"/>
-          </g>
-        </svg>
-      </button>
-    </div>
-    <p id="ket">Sentuh LOVEnya!</p>
-
-    
-    <div class="kumpulanstiker">
-      <img id="fotostiker" src="https://feeldreams.github.io/cilukba.gif" alt="">
-      <img id="fotostikerPopup" src="https://feeldreams.github.io/pandaputih.gif" alt="">
-      <img id="fotostikerPopupCon" src="https://feeldreams.github.io/weee.gif" alt="">
-      <img id="fotostikerPopupCan" src="https://feeldreams.github.io/ngumpet.gif" alt="">
-    </div>
-
-    
-    <div>
-      <div id="pergeseran">
-        <p><b><img src="https://i.ibb.co/s9cTyc0/bunga.gif" alt=""><br>
-          <span>Hai kamu 🤭❤️</span></b></p>
-
-        <p><b><img src="https://feeldreams.github.io/pusn.gif" alt=""><br>
-          <span>Aku Cuma Mau<br>Bilang Nih 😆</span></b></p>
-
-        <p><b><img src="https://feeldreams.github.io/cilukba.gif" alt=""><br>
-          <span>Ciyee yang Hari Ini Ultah 😜</span></b></p>
-
-        <p><b><img src="https://feeldreams.github.io/g5.gif" alt=""><br>
-          <span class="ft">Selamat Ulang Tahun! 🥳</span></b></p>
-
-        <p><b><img src="https://feeldreams.github.io/mndkat.gif" alt=""><br>
-          <span>Panjang Umur dan<br>Sehat Selalu yaa 🥰</span></b></p>
-      </div>
-    </div>
-
-    
-    <div>
-      <blockquote id="bq">
-        <p id="teksnim">Happy Level Up Day! 🥳</p>
-        <p id="kalimat"><span id="klganti">Canda yaa wkwk 🤣<br><br></span>Intinya semoga di hari bertambahnya<br>usia kamu ini, kamu bisa menjadi<br>pribadi yang lebih baik lagi yaa.. 🥳<br><br><span class="ft">Wish You All The Best ✨</span></p>
-      </blockquote>
-    </div>
-
-    
-    <div id="Tombol">
-      <button type="button" id="tmbl">Geser 👉</button>
-    </div>
-
-  </div></template>
-<!-- Bagian Abid: pesan untuk seseorang dengan efek hati. -->
-<template id="project-abid"><div class="floating-hearts">
-        <span>♡</span>
-        <span>♡</span>
-        <span>♥</span>
-        <span>♡</span>
-        <span>♥</span>
-    </div>
-
-    <main class="card">
-
-        <div class="top-heart">♥</div>
-
-        <p class="small-text">A little message for you</p>
-
-        <h1>Hai, Kamu ❤️</h1>
-
-        <p class="description">
-            Ada satu hal sederhana yang ingin aku sampaikan...
-        </p>
-
-        <div class="divider">
-            <span></span>
-            ♥
-            <span></span>
+    <main class="container">
+      <!-- Header / Profil -->
+      <header class="profile">
+        <div class="avatar-container">
         </div>
+        <h1 class="name">Congratulatory messages</h1>
+        <p class="bio">Ready to help in congratulating someone</p>
+      </header>
 
-        <p class="question">
-            Mau tahu rahasiaku?
-        </p>
+      <!-- Daftar Link Utama -->
+      <section class="links-container">
+        <a
+          href="https://wa.me/6281233418594"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-card highlight"
+        >
+          
+          <span>Kata Kata selamat ulang tahun</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </a>
 
-        <button class="button-love" onclick="showLove()">
-            Buka Pesanku 💌
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-card"
+        >
+          
+          <span>Kata kata selamat wisuda</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-card"
+        >
+          
+          <span>Undangan acara</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="link-card"
+        >
+          
+          <span>Kata kata semangat</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
+        </a>
+
+        <!-- Tombol Salin Link (Fitur Khusus JS) -->
+        <button class="link-card share-btn" onclick="copyPageLink()">
+          
+          <span>Kata kata buat seseorang</span>
+          <i class="fas fa-chevron-right arrow-icon"></i>
         </button>
-
-        
-        <div id="love-message" class="love-message">
-
-            <p> Aku mungkin nggak selalu pandai mengungkapkan apa yang aku rasakan, tapi ada satu hal yang ingin aku bilang. Aku bersyukur bisa mengenal kamu dan punya seseorang yang bisa membuat hari-hari terasa lebih menyenangkan. </p>
-
-            <p> Terima kasih sudah menjadi bagian dari cerita ini. Semoga kamu selalu menemukan alasan untuk tersenyum, bahkan di hari-hari yang terasa berat. ❤️ </p>
-
-            <p class="ending">
-                Jangan lupa tersenyum hari ini yaa ✨
-            </p>
-        </div>
-
-        <p class="signature">
-            — Dari seseorang yang selalu mendoakanmu ♡
-        </p>
-
-    </main></template>
-<!-- Bagian Nouva: ucapan selamat wisuda, foto, dan kado. -->
-<template id="project-nouva"><div class="container">
-      <div class="profile">
-        <img
-          src="nouva-wisuda.jpeg"
-          alt="Foto Wisuda"
-          class="profile-img"
-        />
-        <h1>Selamat Wisuda!</h1>
-        <p class="subtitle">So Proud Of You! !</p>
-      </div>
-
-      
-      <button id="surprise-btn" class="main-btn">Buka Pesan Spesial</button>
-
-      
-      <div id="quotes-box" class="quotes-box-hidden">
-        <p>
-          "Selamat atas kelulusanmu! Perjuangan dan kerja kerasmu selama kuliah
-          akhirnya terbayar lunas hari ini. Semoga gelar baru ini menjadi pintu
-          pembuka bagi kesuksesan dan petualangan hebatmu di masa depan!
-        </p>
-      </div>
-      
-      <button id="gift-btn" class="link-btn">Lihat kado untuk kamu</button>
-     
-
-      <div id="gift-box" class="quotes-box hidden" style="border-left: 5px solid #4caf50; margin-top: 15px;">
-    <p><strong>🎟️ KADO :</strong><br>
-    "Selamat! Kamu berhak mendapatkan kado spesial ini dari aku! ☕🥞"</p>
-    
-    
-    <img src="nouva-kado.jpeg" alt="Hadiah Wisuda" class="gift-img">
-</div>
-     
-      
-      <div class="links">
-        <a href="https://wa.me/6285231124859" target="_blank" class="link-btn"
-          >Kirim ucapan terimakasih via WA</a>
-      </div>
-    </div>
-
-    
-  <canvas id="canvas-confetti" aria-hidden="true"></canvas></template>
-<!-- Bagian Risky: kado penyemangat dengan nama penerima. -->
-<template id="project-risky"><div class="container">
-
-        <h1>🎁 Kado Untukmu</h1>
-
-        <p class="subtitle">
-            Ada sebuah pesan kecil yang ingin
-            disampaikan kepadamu ❤️
-        </p>
-
-
-        
-
-        <input
-            type="text"
-            id="nama" aria-label="Nama kamu" maxlength="80"
-            placeholder="Masukkan nama kamu..."
-        >
-
-
-        <p id="nama-error" role="alert" hidden>Masukkan nama terlebih dahulu ❤️</p>
-        <p class="click-text">
-            Klik kado di bawah untuk membukanya 🎁
-        </p>
-
-
-        
-
-        <div
-            class="gift-container" role="button" tabindex="0" aria-label="Buka kado"
-            onclick="bukaKado()">
-
-             <div class="gift" id="gift">
-
-                
-
-                <div class="gift-lid">
-
-                    <div class="ribbon-left"></div>
-
-                    <div class="ribbon-right"></div>
-
-                </div>
-                
-
-                
-
-                <div class="gift-body"></div>
-
-
-                
-
-                <div class="ribbon-vertical"></div>
-
-            </div>
-
-        </div>
-
-
-        
-
-        <div
-            class="message"
-            id="message"
-        >
-
-            <h2 id="judul">
-                Untukmu ❤️
-            </h2>
-
-            <p>
-
-                Aku tahu mungkin akhir-akhir ini
-                semuanya terasa berat.
-
-                <br><br>
-
-                Tapi jangan menyerah, ya. 🌷
-
-                Kamu sudah melewati banyak hal
-                sampai sejauh ini, dan itu berarti
-                kamu jauh lebih kuat dari yang kamu kira.
-
-                <br><br>
-
-                Tidak apa-apa kalau hari ini kamu
-                berjalan pelan. Tidak apa-apa
-                kalau kamu ingin beristirahat.
-
-                <br><br>
-
-                Yang penting, jangan berhenti
-                percaya bahwa akan ada hari
-                yang lebih baik.
-
-                <br><br>
-
-                ✨ Setiap langkah kecil yang kamu
-                lakukan tetap berarti.
-
-                <br><br>
-
-                Kamu hebat.
-                Kamu berharga.
-                Kamu mampu melewati ini.
-
-                <br><br>
-
-                Tetap semangat dan jangan
-                menyerah pada dirimu sendiri. ❤️
-
-            </p>
-
-        </div>
-
-
-        
-
-        <button
-            class="reset"
-            id="reset"
-            onclick="resetKado()"
-        >
-            🎁 Buka Lagi
-        </button>
-
-    </div></template>
-<!-- Bagian Selly: undangan wisuda, detail acara, lokasi, dan tautan WhatsApp. -->
-<template id="project-selly"><div class="container">
-
-        <div class="foto">
-            <img src="selly-foto.jpeg" alt="Foto Wisudawan">
-        </div>
-
-        <h1>Shakila Gabriella</h1>
-
-        <p class="judul">
-             You're Invited! 
-        </p>
-
-        <div class="deskripsi">
-            <p>
-                After a long journey, the long-awaited day
-                finally arrived.
-            </p>
-
-            <p>
-                With full of happiness, aku ngundang
-                kalian buat hadir dan ngerayain momen
-                spesial ini bareng aku. 
-            </p>
-        </div>
-
-        <div class="menu">
-
-            <button onclick="lihatAcara()">
-                 Detail about graduation
-            </button>
-
-            <button onclick="lihatLokasi()">
-                 Location
-            </button>
-
-            <button onclick="konfirmasi()">
-                 Invitation
-            </button>
-
-        </div>
-
-        <div id="acara" class="info">
-
-            <h2> Detail Wisuda</h2>
-
-            <p>Sabtu, 10 Oktober 2026</p>
-            <p>Pukul 08.00 WIB</p>
-            <p>Gedung Sport Center</p>
-
-        </div>
-
-        <div id="lokasi" class="info">
-
-            <h2> Lokasi Acara</h2>
-
-            <p>Gedung Sport Center</p>
-            <p>Malang, Jawa Timur</p>
-
-        </div>
-
-        <p class="footer">
-            Can't wait to see you there! :3
-        </p>
-
-    </div></template>
-</body>
+      </section>
+
+      <!-- Sosial Media Icons (Bawah) -->
+      <footer class="social-footer">
+        <a href="https://tiktok.com" target="_blank" aria-label="TikTok"
+          ><i class="fab fa-tiktok"></i
+        ></a>
+        <a href="https://youtube.com" target="_blank" aria-label="YouTube"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="mailto:email@domain.com" aria-label="Email"
+          ><i class="fas fa-envelope"></i
+        ></a>
+      </footer>
+
+      <p class="copyright">&copy; 2026 Crafted by kelompok 5</p>
+    </main>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">Link berhasil disalin! 📋</div>
+
+    <!-- JavaScript Lokal -->
+    <script src="script.js"></script>
+  </body>
 </html>
