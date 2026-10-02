@@ -1348,6 +1348,7 @@ body[data-project="selly"] button, body[data-project="selly"] [role="button"]{ m
 
 /* Penyempurnaan Abdul: foto pembuka yang selalu terlihat dan pesan lebih personal. */
 body[data-project="abdul"] #ftAwal {
+  display: none;
   min-height: 130px;
   min-width: 130px;
   margin-bottom: 50px;
